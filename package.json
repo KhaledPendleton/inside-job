@@ -1,0 +1,16 @@
+{
+	"name": "part-time-brooklyn",
+	"version": "1.0.0",
+	"description": "Bullitin board for jobs in Brooklyn NY",
+	"main": "eleventy.config.js",
+	"scripts": {
+		"start": "npx eleventy --serve"
+	},
+	"author": {
+		"name": "Khaled Pendleton",
+		"url": "https://khaledpendleton.com"
+	},
+	"devDependencies": {
+		"@11ty/eleventy": "^2.0.1"
+	}
+}
