@@ -1,7 +1,7 @@
 {
 	"name": "part-time-brooklyn",
 	"version": "1.0.0",
-	"description": "Bullitin board for jobs in Brooklyn NY",
+	"description": "Bulletin board for jobs in Brooklyn NY",
 	"main": "eleventy.config.js",
 	"scripts": {
 		"start": "npx eleventy --serve"
