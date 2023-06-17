@@ -1,0 +1,28 @@
+{% extends "layouts/base.html" %}
+
+{% set organization = helpers.findInCollection(collections.organizations, page.inputPath) %}
+{% set openRoles = helpers.filterRolesByOrganization(collections.roles, organization) %}
+
+{% block content %}
+    <article class="role | stack">
+        <header>
+            <h1>{{ name }}</h1>
+            <address>{{ address }}</address>
+        </header>
+
+        <section>
+            <div class="markdown | stack | font-size:lg">
+                {{ content | safe }}
+            </div>
+        </section>
+
+        <section>
+            <ul role="list" class="roles-list">
+                {% for role in openRoles %}
+                    <li><a href="{{ role.url }}" class="blink">{{ role.data.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+    </article>
+
+{% endblock %}
