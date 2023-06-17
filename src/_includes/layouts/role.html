@@ -6,13 +6,17 @@
 
     {% block content %}
         <article class="role | stack">
-            <header>
+            <header class="role_header | stack | flow:sm">
                 <h1>{{ role.data.title }}</h1>
-                <a href="{{ organization.url }}" class="blink">{{ organization.data.name }}</a>
+                <a href="{{ organization.url }}" class="blink" up-instant up-layer="swap">
+                    {{ organization.data.name }}
+                </a>
             </header>
 
-            <section class="markdown | stack | font-size:lg">
-                {{ role.content | safe }}
+            <section>
+                <div class="stack | flow font-size:lg">
+                    {{ role.content | safe }}
+                </div>
             </section>
         </article>
     {% endblock %}
