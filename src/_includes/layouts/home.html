@@ -6,31 +6,9 @@
     </article>
 
     <section>
-        <ol role="list" class="organizations-list | stack">
-            {% for organization in collections.organizations %}
-                <li>
-                    <article class="stack">
-                        {% set openRoles = helpers.filterRolesByOrganization(collections.roles, organization) %}
-    
-                        <header>
-                            <h2>{{ organization.data.name }}</h2>
-                            <address style="font-size: var(--text\:sm);">{{ organization.data.address }}</address>
-                        </header>
-    
-                        <section>
-                            {{ organization.content | safe }}
-                        </section>
-    
-                        <section>
-                            <ul role="list" class="roles-list">
-                                {% for role in openRoles %}
-                                    <li><a href="{{ role.url }}" class="blink">{{ role.data.title }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        </section>
-                    </article>
-                </li>
-            {% endfor %}
-        </ol>
+        {% set organizationsList = collections.organizations %}
+        {% set rolesCollection = collections.roles %}
+
+        {% include "partials/lists/organizations-list.html" %}
     </section>
 {% endblock %}
