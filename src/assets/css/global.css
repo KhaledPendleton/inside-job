@@ -61,3 +61,46 @@ ul,
 ol {
     padding-inline-start: var(--space\:lg);
 }
+
+up-modal,
+up-modal-backdrop,
+up-modal-viewport,
+up-focus-trap,
+up-modal-content,
+up-modal-dismiss {
+    max-inline-size: none;
+}
+
+up-modal-box,
+up-modal-box::before {
+    inline-size: unset !important;
+    border-radius: var(--space);
+}
+
+up-modal-box {
+    /* Behaves like .center */
+    --measure: 51.25rem;
+    --gutter: var(--text\:xl);
+
+    /* OVERRIDES */
+    padding-block: var(--space\:xl);
+    position: relative;
+
+    /* THEME */
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary-shade);
+}
+
+up-modal-box::before {
+    pointer-events: none;
+    max-inline-size: none;
+    box-sizing: border-box;
+    content: "";
+    position: absolute;
+    z-index: 2001;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    border: 3px solid var(--color-primary-glare);
+}
