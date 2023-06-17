@@ -1,0 +1,128 @@
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}
+
+.blink {
+    text-decoration: none;
+}
+
+.blink:hover {
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+
+.skip-link {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 99;
+
+    /* NOTE: .skip-link styled like a button to increate visibility */
+    padding: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: var(--color-light);
+    color: var(--color-primary-shade);
+    border: 2px solid var(--color-primary-shade);
+}
+
+.skip-link:not(:focus) {
+    /* NOTE: Same as .visually-hidden */
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}
+
+.center {
+    /**
+     * Overrides:
+     * --measure
+     * --gutter
+     *
+     * 1. Remove padding from the width calculation
+     * 2. The maximum width is the maximum measure
+     * 3. Only affect horizontal margins
+     * 4. Apply the minimum horizontal space from surroundings
+     */
+    box-sizing: content-box; /* 1. */
+    max-inline-size: var(--measure); /* 2. */
+    margin-inline: auto; /* 3. */
+    padding-inline-start: var(--gutter); /* 4 */
+    padding-inline-end: var(--gutter); /* 4 */
+}
+
+.stack {
+    /**
+     * Overrides:
+     * --flow
+     */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.stack > * + * {
+    margin-block-start: var(--flow);
+}
+
+.stack:only-child {
+    block-size: 100%;  /* `height` in horizontal-tb writing mode */
+}
+
+.font-size\:sm { font-size: var(--text\:sm) !important; }
+.font-size\:lg { font-size: var(--text\:lg) !important; }
+
+/* EXCEPTIONS */
+.site-wrap.center {
+    --measure: 75rem;
+    --gutter: var(--text\:xl);
+}
+
+.site-wrap #main-content {
+    margin-block-start: var(--space\:xl); /* Should match body { padding } */
+}
+
+#main-content.stack {
+    --flow: var(--space\:xl); /* Should match body { padding } */
+}
+
+.markdown.stack {
+    --flow: var(--space\:sm);
+}
+
+.organizations-list {
+    padding-inline-start: 0;
+    margin-block: 0;
+}
+
+.organizations-list > li .stack {
+    --flow: var(--space);
+}
+
+.nav-list {
+    margin-block: 0;
+}
+
+.role .blink {
+    margin-inline-start: var(--space\:lg);
+}
+
+.role.stack {
+    --flow: var(--space);
+}
