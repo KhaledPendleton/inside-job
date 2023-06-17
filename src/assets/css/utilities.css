@@ -49,7 +49,8 @@
     white-space: nowrap;
 }
 
-.center {
+.center,
+up-modal-box {
     /**
      * Overrides:
      * --measure
@@ -88,23 +89,13 @@
 .font-size\:sm { font-size: var(--text\:sm) !important; }
 .font-size\:lg { font-size: var(--text\:lg) !important; }
 
+.flow { --flow: var(--space) !important; }
+.flow\:sm { --flow: var(--space\:sm) !important; }
+.flow\:xl { --flow: var(--space\:xl) !important; }
+
 /* EXCEPTIONS */
-.site-wrap.center {
-    --measure: 75rem;
-    --gutter: var(--text\:xl);
-}
-
-.site-wrap #main-content {
-    margin-block-start: var(--space\:xl); /* Should match body { padding } */
-}
-
-#main-content.stack {
-    --flow: var(--space\:xl); /* Should match body { padding } */
-}
-
-/* TODO: Rename class from .markdown */
-.markdown.stack {
-    --flow: var(--space);
+.nav-list {
+    margin-block: 0;
 }
 
 .organizations-list {
@@ -112,22 +103,19 @@
     margin-block: 0;
 }
 
-.organizations-list > li .stack {
-    --flow: var(--space\:sm);
-}
-
-.nav-list {
-    margin-block: 0;
-}
-
-.role .blink {
-    margin-inline-start: var(--space\:lg);
-}
-
 .role .roles-list {
     margin-block: 0;
 }
 
-.role.stack {
-    --flow: var(--space);
+.role_header .blink {
+    margin-inline-start: var(--space\:lg);
+}
+
+.site-wrap.center {
+    --measure: 75rem;
+    --gutter: var(--text\:xl);
+}
+
+.site-wrap #main-content {
+    margin-block-start: var(--space\:xl); /* Should match body { padding } */
 }
