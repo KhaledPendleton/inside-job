@@ -1,7 +1,7 @@
 {
 	"name": "part-time-brooklyn",
 	"version": "1.0.0",
-	"description": "Bulletin board for jobs in Brooklyn NY",
+	"description": "Find jobs to apply to in person",
 	"main": "eleventy.config.js",
 	"scripts": {
 		"start": "npx eleventy --serve"
