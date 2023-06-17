@@ -1,7 +1,7 @@
 {# PROPS: organizationsList, rolesCollection #}
 {# NOTE: Prop is rolesCollection instead of rolesList to avoid overriding value of rolesList on each iteration #}
 
-<ol role="list" class="organizations-list | stack">
+<ol role="list" class="organizations-list | stack | margin-block:0">
     {% for organization in organizationsList %}
         {# organization | log #}
         {% set openRolesList %}
