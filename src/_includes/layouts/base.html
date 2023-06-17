@@ -6,6 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script src="https://cdn.jsdelivr.net/npm/unpoly@3.2.0/unpoly.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/unpoly@3.2.0/unpoly.min.css">
+
     {% include "partials/meta-info.html" %}
     {% include "partials/assets.html" %}
 </head>
@@ -13,7 +16,9 @@
     <div class="site-wrap | center">
         {% include "partials/site-head.html" %}
 
-        <main id="main-content" tab-index="-1" class="stack">
+        {# UNPOLY MAIN #}
+        {# NOTE: Flow matches body { padding } #}
+        <main id="main-content" tab-index="-1" class="stack | flow:xl" up-main>
             {% block content %}{% endblock %}
         </main>
     </div>

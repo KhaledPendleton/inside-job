@@ -1,9 +1,19 @@
-<a href="#main-content" class="skip-link | visually-hidden">Skip to content</a>
+<a href="#main-content" class="skip-link">Skip to content</a>
 
 <header class="site-head">
     <nav>
         <ul role="list" class="nav-list">
-            <li><a href="/" aria-label="{{ site.name }} - home" class="blink">{{ site.name }}</a></li>
+            <li>
+                <a 
+                    href="/"
+                    aria-label="{{ site.name }} - home"
+                    class="blink"
+                    up-follow
+                    up-preload
+                >
+                    {{ site.name }}
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
