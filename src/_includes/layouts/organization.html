@@ -17,14 +17,16 @@
         </header>
 
         <section>
-            <div class="markdown | stack | font-size:lg">
-                {{ content | safe }}
+            <div class="stack" style="--flow: var(--space)">
+                <div class="markdown | stack | font-size:lg">
+                    {{ content | safe }}
+                </div>
+
+                {% if openRolesList %}
+                    {{ openRolesList | safe }}
+                {% endif %}
             </div>
         </section>
-
-        {% if openRolesList %}
-            {{ openRolesList | safe }}
-        {% endif %}
     </article>
 
 {% endblock %}
