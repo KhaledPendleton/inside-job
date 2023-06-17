@@ -1,0 +1,19 @@
+{% extends "layouts/base.html" %}
+{% set role = helpers.roleForPath(collections.roles, page.inputPath) %}
+
+{% if role %}
+    {% set organization = helpers.getOrganizationByRole(collections.organizations, role) %}
+
+    {% block content %}
+        <article class="role | stack">
+            <header>
+                <h1>{{ role.data.title }}</h1>
+                <a href="#" class="blink">{{ organization.data.name }}</a>
+            </header>
+
+            <section class="markdown | stack | font-size:lg">
+                {{ role.content | safe }}
+            </section>
+        </article>
+    {% endblock %}
+{% endif %}
