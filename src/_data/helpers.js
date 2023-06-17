@@ -35,9 +35,8 @@ module.exports = {
         return matchedOrg[0];
     },
 
-    roleForPath(rolesCollection, filePath) {
-        // console.log(rolesCollection.filter((role) => role.page.inputPath === filePath));
-        return rolesCollection.filter((role) => role.page.inputPath === filePath)[0];
+    findInCollection(collection, filePath) {
+        return collection.filter((entry) => entry.page.inputPath === filePath)[0];
     },
 
     parentDirName: parentDirName
