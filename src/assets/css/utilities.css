@@ -102,8 +102,9 @@
     --flow: var(--space\:xl); /* Should match body { padding } */
 }
 
+/* TODO: Rename class from .markdown */
 .markdown.stack {
-    --flow: var(--space\:sm);
+    --flow: var(--space);
 }
 
 .organizations-list {
@@ -112,7 +113,7 @@
 }
 
 .organizations-list > li .stack {
-    --flow: var(--space);
+    --flow: var(--space\:sm);
 }
 
 .nav-list {
@@ -121,6 +122,10 @@
 
 .role .blink {
     margin-inline-start: var(--space\:lg);
+}
+
+.role .roles-list {
+    margin-block: 0;
 }
 
 .role.stack {
