@@ -1,0 +1,63 @@
+:root {
+    --color-primary: hsl(240, 100%, 50%);
+    --color-primary-glare: hsl(240, 100%, 95%);
+    --color-primary-shade: hsl(240, 100%, 15%);
+    --color-light: hsl(0, 0%, 100%);
+
+    --text\:base: 1rem;
+    --ratio: 1.4; /* 1.4 picked to match line-height in reset */
+
+    --text\:xs: calc(var(--text\:sm) / var(--ratio));
+    --text\:sm: calc(var(--text\:base) / var(--ratio));
+    --text\:lg: calc(var(--text\:base) * var(--ratio));
+    --text\:xl: calc(var(--text\:lg) * var(--ratio));
+    --text\:2xl: calc(var(--text\:xl) * var(--ratio));
+    --text\:3xl: calc(var(--text\:2xl) * var(--ratio));
+
+    --space: 1.4rem; /* 1.4 picked to match line-height in reset */
+    --space\:2xs: calc(var(--space\:xs) / var(--ratio));
+    --space\:xs: calc(var(--space\:sm) / var(--ratio));
+    --space\:sm: calc(var(--space) / var(--ratio));
+    --space\:lg: calc(var(--space) * var(--ratio));
+    --space\:xl: calc(var(--space\:lg) * var(--ratio));
+    --space\:2xl: calc(var(--space\:xl) * var(--ratio));
+    --space\:3xl: calc(var(--space\:2xl) * var(--ratio));
+
+    --measure: 60ch;
+    --gutter: var(--space);
+    --flow: var(--space);
+}
+
+/* 
+ * Used
+ * Space: base, sm, lg, xl
+ */
+
+::selection {
+    background-color: var(--color-primary-shade);
+    color: var(--color-light);
+}
+
+body {
+    padding-block: var(--space\:xl);
+    background-color: var(--color-primary);
+    color: var(--color-light);
+}
+
+a {
+    color: inherit;
+    cursor: pointer;
+}
+
+h1,
+h2 {
+    line-height: 1.1;
+}
+
+h1 { font-size: var(--text\:3xl); }
+h2 { font-size: var(--text\:xl); }
+
+ul,
+ol {
+    padding-inline-start: var(--space\:lg);
+}
