@@ -1,0 +1,6 @@
+{# PROPS: rolesList #}
+<ul role="list" class="roles-list">
+    {% for role in rolesList %}
+        <li><a href="{{ role.url }}" class="blink">{{ role.data.title }}</a></li>
+    {% endfor %}
+</ul>

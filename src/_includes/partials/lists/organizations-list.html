@@ -1,0 +1,31 @@
+{# PROPS: organizationsList, rolesCollection #}
+{# NOTE: Prop is rolesCollection instead of rolesList to avoid overriding value of rolesList on each iteration #}
+
+<ol role="list" class="organizations-list | stack">
+    {% for organization in organizationsList %}
+        {# organization | log #}
+        {% set openRolesList %}
+            {% set rolesList = helpers.filterRolesByOrganization(rolesCollection, organization) %}
+            {% if rolesList | length %}
+                <section>{% include "partials/lists/roles-list.html" %}</section>
+            {% endif %}
+        {% endset %}
+
+        <li>
+            <article class="stack">
+                <header>
+                    <h2>{{ organization.data.name }}</h2>
+                    <address style="font-size: var(--text\:sm);">{{ organization.data.address }}</address>
+                </header>
+
+                <section>
+                    {{ organization.content | safe }}
+                </section>
+
+                {% if openRolesList %}
+                    {{ openRolesList | safe }}
+                {% endif %}
+            </article>
+        </li>
+    {% endfor %}
+</ol>
