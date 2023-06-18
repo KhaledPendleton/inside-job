@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="/assets/css/reset.css?{{ assetHash }}">
-<link rel="stylesheet" href="/assets/css/global.css?{{ assetHash }}">
-<link rel="stylesheet" href="/assets/css/animations.css?{{ assetHash }}">
-<link rel="stylesheet" href="/assets/css/utilities.css?{{ assetHash }}">
+{% set criticalStylesheets = ['reset.css', 'global.css', 'animations.css', 'exceptions.css'] %}
+
+{% for stylesheet in criticalStylesheets %}
+    <link rel="stylesheet" href="/assets/css/{{ stylesheet }}?{{ assetHash }}">
+{% endfor %}
