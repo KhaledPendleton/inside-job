@@ -90,6 +90,7 @@ up-modal-box {
 .font-size\:lg { font-size: var(--text\:lg) !important; }
 
 .flow { --flow: var(--space) !important; }
+.flow\:2xs { --flow: var(--space\:2xs) !important; }
 .flow\:sm { --flow: var(--space\:sm) !important; }
 .flow\:xl { --flow: var(--space\:xl) !important; }
 
