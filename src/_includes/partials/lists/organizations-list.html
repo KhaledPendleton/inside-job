@@ -19,7 +19,9 @@
                 </header>
 
                 <section>
-                    {{ organization.content | safe }}
+                    <div class="stack | flow:2xs">
+                        {{ organization.content | safe }}
+                    </div>
                 </section>
 
                 {% if openRolesList %}

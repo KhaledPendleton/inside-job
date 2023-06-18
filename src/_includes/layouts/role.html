@@ -6,7 +6,7 @@
 
     {% block content %}
         <article class="role | stack">
-            <header class="role_header | stack | flow:sm">
+            <header class="role_header | flow:sm">
                 <h1>{{ role.data.title }}</h1>
                 <a href="{{ organization.url }}" class="blink" up-instant up-layer="swap">
                     {{ organization.data.name }}
@@ -14,7 +14,7 @@
             </header>
 
             <section>
-                <div class="stack | flow font-size:lg">
+                <div class="stack | flow:sm font-size:lg">
                     {{ role.content | safe }}
                 </div>
             </section>
