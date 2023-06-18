@@ -1,3 +1,6 @@
+/*
+ * VARIABLES
+ * *********************************************************************************************/
 :root {
     --color-primary: hsl(240, 100%, 50%);
     --color-primary-glare: hsl(240, 100%, 95%);
@@ -32,6 +35,10 @@
  * Used
  * Space: base, sm, lg, xl
  */
+
+/*
+ * THEME
+ * *********************************************************************************************/
 
 ::selection {
     background-color: var(--color-primary-shade);
@@ -104,3 +111,110 @@ up-modal-box::before {
     bottom: 0px;
     border: 3px solid var(--color-primary-glare);
 }
+
+/*
+ * LAYOUTS
+ * *********************************************************************************************/
+.center,
+up-modal-box {
+    /**
+     * Overrides:
+     * --measure
+     * --gutter
+     *
+     * 1. Remove padding from the width calculation
+     * 2. The maximum width is the maximum measure
+     * 3. Only affect horizontal margins
+     * 4. Apply the minimum horizontal space from surroundings
+     */
+    box-sizing: content-box; /* 1. */
+    max-inline-size: var(--measure); /* 2. */
+    margin-inline: auto; /* 3. */
+    padding-inline-start: var(--gutter); /* 4 */
+    padding-inline-end: var(--gutter); /* 4 */
+}
+
+.stack {
+    /**
+     * Overrides:
+     * --flow
+     */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.stack > * + * {
+    margin-block-start: var(--flow);
+}
+
+.stack:only-child {
+    block-size: 100%;  /* `height` in horizontal-tb writing mode */
+}
+
+/* 
+ * COMPONENTS
+ * *********************************************************************************************/
+.blink {
+    text-decoration: none;
+}
+
+.blink:hover {
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+
+.skip-link {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 99;
+
+    /* NOTE: .skip-link styled like a button to increate visibility */
+    padding: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: var(--color-light);
+    color: var(--color-primary-shade);
+    border: 2px solid var(--color-primary-shade);
+}
+
+.skip-link:not(:focus) {
+    /* NOTE: Same as .visually-hidden */
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}
+
+/*
+ * UTILITY CLASSES
+ * *********************************************************************************************/
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}
+
+.font-size\:sm { font-size: var(--text\:sm) !important; }
+.font-size\:lg { font-size: var(--text\:lg) !important; }
+
+.flow { --flow: var(--space) !important; }
+.flow\:2xs { --flow: var(--space\:2xs) !important; }
+.flow\:sm { --flow: var(--space\:sm) !important; }
+.flow\:xl { --flow: var(--space\:xl) !important; }
+
+.margin-block\:0 { margin-block: 0 !important; }
