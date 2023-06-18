@@ -3,6 +3,6 @@ title: Apply to jobs in person
 layout: 'layouts/home.html'
 ---
 
-# Apply Inside
+# Apply Inside!
 
-No AI filtering. No matching algorithms. Just businesses that accept applications in person.
+No AI filtering. No algorithmic match making. Just businesses accepting in-person applications.
