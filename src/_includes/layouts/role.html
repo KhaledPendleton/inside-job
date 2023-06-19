@@ -3,15 +3,12 @@
 
 {% if role %}
     {% set organization = helpers.getOrganizationByRole(collections.organizations, role) %}
+    {% set headerOrganizationUrl = organization.url %}
+    {% set headerOrganizationLabel = organization.data.name %}
 
     {% block content %}
         <article class="role | stack">
-            <header class="role_header | flow:sm">
-                <h1>{{ role.data.title }}</h1>
-                <a href="{{ organization.url }}" class="blink" up-instant up-layer="swap">
-                    {{ organization.data.name }}
-                </a>
-            </header>
+            <h1>{{ role.data.title }}</h1>
 
             <section>
                 <div class="stack | flow:sm font-size:lg">
