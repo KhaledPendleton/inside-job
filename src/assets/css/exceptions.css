@@ -10,3 +10,8 @@
 .site-wrap #main-content {
     margin-block-start: var(--space\:xl); /* Should match body { padding } */
 }
+
+.cta {
+    line-height: 1.2;
+    font-size: var(--text\:2xl);
+}
