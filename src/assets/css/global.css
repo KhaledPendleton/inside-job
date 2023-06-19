@@ -164,7 +164,7 @@ up-modal-box {
 
 .blink:hover {
     animation-name: blink;
-    animation-duration: 0.4s;
+    animation-duration: 0.5s;
     animation-timing-function: ease;
     animation-iteration-count: infinite;
 }
