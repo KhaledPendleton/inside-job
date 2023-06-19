@@ -6,14 +6,27 @@
             <li>
                 <a 
                     href="/"
-                    aria-label="{{ site.name }} - home"
                     class="blink"
-                    up-follow
                     up-preload
+                    up-target="{{ ui['up-target'] }}"
+                    aria-label="{{ site.name }} - home"
                 >
                     {{ site.name }}
                 </a>
             </li>
+
+            {% if headerOrganizationUrl and headerOrganizationLabel %}
+                <li>
+                    <a 
+                        href="{{ headerOrganizationUrl }}"
+                        class="blink"
+                        up-instant
+                        up-layer="swap"
+                    >
+                        {{ headerOrganizationLabel }}
+                    </a>
+                </li>
+            {% endif %}
         </ul>
     </nav>
 </header>
