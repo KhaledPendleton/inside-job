@@ -2,13 +2,6 @@
     padding-inline-start: 0;
 }
 
-.role_header .blink {
-    /* 1. Applies .roles-list type spacing to a listless link */
-    display: inline-block;
-    margin-inline-start: var(--space\:lg); /* 1. */
-    margin-block-start: var(--flow); /* 1. */
-}
-
 .site-wrap.center {
     --measure: 75rem;
     --gutter: var(--text\:xl);
