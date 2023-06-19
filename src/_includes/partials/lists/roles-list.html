@@ -2,7 +2,12 @@
 <ul role="list" class="margin-block:0">
     {% for role in rolesList %}
         <li>
-            <a href="{{ role.url }}" class="blink" up-follow up-instant up-layer="root">
+            <a href="{{ role.url }}"
+                class="blink"
+                up-instant
+                up-layer="root"
+                up-target="{{ ui['up-target'] }}"
+            >
                 {{ role.data.title }}
             </a>
         </li>
